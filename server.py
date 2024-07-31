@@ -38,7 +38,7 @@ def manejo_cliente(cliente):
         try:
             mensaje = cliente.recv(1024)  #1024 Bytes limite que puede leer
             transmicion(mensaje,cliente)     
-        except:
+        except KeyboardInterrupt:
             index = clients.index(cliente)
             clients.remove(cliente)
             cliente.close()
